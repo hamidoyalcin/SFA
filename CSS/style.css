@@ -207,6 +207,44 @@ ul {
     background-color: #fafafa;
 }
 
+/* Responsive tables: convert rows into cards on small screens */
+@media (max-width: 768px) {
+  .courses-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .courses-table thead {
+    display: none;
+  }
+  .courses-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 0.75rem;
+  }
+  .courses-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0;
+    border: none;
+  }
+  .courses-table td::before {
+    content: attr(data-label);
+    flex-basis: 50%;
+    font-weight: 600;
+    color: #0073b7;
+  }
+  .courses-table td:last-child {
+    justify-content: flex-start;
+  }
+  .courses-table td a.btn.small-btn {
+    margin-top: 0.5rem;
+  }
+}
+
 /* Booking Section */
 .booking-section {
     padding: 4rem 0;
