@@ -1,0 +1,567 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f8f8f8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Container for consistent page width */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header and Navigation */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-image {
+    /* Größeres Logo für bessere Lesbarkeit */
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0073b7;
+}
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0073b7;
+}
+
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-list li a {
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #0073b7;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-btn {
+    background-color: #0073b7;
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background-color: #005a93;
+}
+
+.secondary-btn {
+    background-color: #ffffff;
+    color: #0073b7;
+    border: 2px solid #0073b7;
+}
+
+.secondary-btn:hover {
+    background-color: #0073b7;
+    color: #ffffff;
+}
+
+.small-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://images.pexels.com/photos/4167542/pexels-photo-4167542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Courses Section */
+.courses-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.courses-section h2 {
+    margin-bottom: 1rem;
+    color: #0073b7;
+}
+
+.courses-section p {
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Die Tabelle erhält keine Mindestbreite, damit sie auf kleinen Bildschirmen nicht horizontal scrollt */
+    min-width: auto;
+}
+
+.courses-table th,
+.courses-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e5e5;
+    text-align: left;
+}
+
+.courses-table th {
+    background-color: #f0f7fd;
+    color: #0073b7;
+    font-weight: 600;
+}
+
+.courses-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Responsive tables: convert rows into cards on small screens */
+@media (max-width: 768px) {
+  .courses-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .courses-table thead {
+    display: none;
+  }
+  .courses-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .courses-table td {
+    display: block;
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+  }
+  .courses-table td:last-child {
+    border-bottom: none;
+  }
+  .courses-table td::before {
+    content: attr(data-label) ': ';
+    font-weight: 600;
+    color: #0073b7;
+    margin-right: 0.25rem;
+  }
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 4rem 0;
+    background-color: #f8f8f8;
+}
+
+.booking-section h2 {
+    color: #0073b7;
+    margin-bottom: 1rem;
+}
+
+.booking-form {
+    max-width: 600px;
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Styling for contact method radio buttons */
+.contact-method-options label {
+    margin-right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.about-section h2 {
+    color: #0073b7;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    margin-bottom: 1rem;
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 0;
+    background-color: #f8f8f8;
+}
+
+.contact-section h2 {
+    color: #0073b7;
+    margin-bottom: 1rem;
+}
+
+.contact-details {
+    margin-top: 1rem;
+}
+
+.contact-details li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-details a {
+    color: #0073b7;
+    text-decoration: underline;
+}
+
+/* Prices Section */
+.prices-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.prices-section h2 {
+    color: #0073b7;
+    margin-bottom: 1rem;
+}
+
+.prices-section p {
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+/* Instructor Section */
+.instructor-section {
+    padding: 4rem 0;
+    background-color: #f8f8f8;
+}
+
+/* Instructor cards layout */
+.instructor-card {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.instructor-card h3 {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #0073b7;
+    font-weight: 600;
+}
+
+.instructor-section h2 {
+    color: #0073b7;
+    margin-bottom: 1rem;
+}
+
+.instructor-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.instructor-photo {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-text {
+    flex: 1;
+    min-width: 250px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Location Section */
+.location-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.location-section h2 {
+    color: #0073b7;
+    margin-bottom: 1rem;
+}
+
+.location-section p {
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+.map-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* WhatsApp Floating Button */
+/* Social media floating buttons */
+.social-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+.social-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.social-button img {
+    width: 32px;
+    height: 32px;
+}
+
+.social-button:hover {
+    transform: scale(1.05);
+}
+
+/* Specific colors for each social button based on position */
+.social-button:nth-child(1) { /* WhatsApp */
+    background-color: #25d366;
+}
+.social-button:nth-child(2) { /* Instagram */
+    background-color: #E1306C;
+}
+.social-button:nth-child(3) { /* TikTok */
+    background-color: #000000;
+}
+
+/* Footer */
+.footer {
+    background-color: #0073b7;
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Hamburger button styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background-color: #0073b7;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile navigation panel */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.mobile-nav.open {
+    transform: translateX(0);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav li {
+    margin-bottom: 1rem;
+}
+
+.mobile-nav a {
+    color: #0073b7;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Responsive adjustments for navigation */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+    .primary-btn {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide navigation links on small screens (could be replaced by hamburger menu) */
+    }
+    .header .primary-btn {
+        display: none; /* Hide book button in header on small screens */
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
