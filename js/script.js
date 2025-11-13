@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             type: 'Erste‑Hilfe / Passbild / Sehtest',
             date: '19. November 2025',
-            time: '09:00 – 15:00',
+            time: '10:00 – 17:30',
             location: 'Augsburg'
         },
         {
